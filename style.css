@@ -1,0 +1,30 @@
+body {
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.container .big {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.small {
+    border: 1px solid black;
+    flex: 1;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+}
+
+
+
+
