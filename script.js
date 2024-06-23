@@ -10,12 +10,18 @@ function makeRequestedGrid() {
             oneRow.appendChild(someDiv);
         }
         bigContainer.appendChild(oneRow);
-    }
+    };
 
-}
-
-
+};
 makeRequestedGrid();
+
+const allDivs = document.querySelectorAll(".small");
+allDivs.forEach(element => {
+    element.addEventListener("mouseover", () => {
+        console.log("Hello world!");
+        element.style.background = "black";
+    });
+});
 
 
 
