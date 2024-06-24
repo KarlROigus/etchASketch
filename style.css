@@ -3,6 +3,8 @@ body {
     justify-content: center;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .container {
@@ -24,8 +26,6 @@ body {
     flex: 1;
     box-shadow: 2px 4px 16px rgba(0,0,0,.06);
 }
-
-
 
 
 

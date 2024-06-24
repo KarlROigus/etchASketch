@@ -1,7 +1,11 @@
 function makeRequestedGrid() {
     const gridSide = prompt("Enter the grid side length: ");
+    if (gridSide < 0 || gridSide > 99) {
+        alert("Please enter a number between 1 and 99");
+        return;
+    }
+    const bigContainer = document.querySelector(".container");
     for (let i = 0; i < parseInt(gridSide); i++) {
-        const bigContainer = document.querySelector(".container");
         const oneRow = document.createElement("div");
         oneRow.className = "big";
         for (let i = 0; i < parseInt(gridSide); i++) {
@@ -10,23 +14,28 @@ function makeRequestedGrid() {
             oneRow.appendChild(someDiv);
         }
         bigContainer.appendChild(oneRow);
-    };
+    }
+}
 
-};
-makeRequestedGrid();
-
-const allDivs = document.querySelectorAll(".small");
-allDivs.forEach(element => {
-    element.addEventListener("mouseover", () => {
-        console.log("Hello world!");
-        element.style.background = "black";
+function makeColoringPossible() {
+    const allDivs = document.querySelectorAll(".small");
+    allDivs.forEach(element => {
+        element.addEventListener("mouseover", () => {
+            if (element) {
+                element.style.backgroundColor = "black";
+            }
+        });
     });
-});
+}
+
+makeRequestedGrid();
+makeColoringPossible();
 
 
-
-
-
-
-
-
+const button = document.querySelector(".button");
+button.addEventListener("click", () => {
+    const grid = document.querySelector(".container");
+    grid.innerHTML = "";
+    makeRequestedGrid();
+    makeColoringPossible();
+})
